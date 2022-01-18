@@ -9,16 +9,25 @@
 <br>
 <h2>A Faire</h2>
   <ul *ngFor="let item of list">
-    <li>{{item.name}} 
-      <button (click)="completeTask(item.id,item.name)">Fait</button>
-      <input  type="text" placeholder="Editer Tache" #edit>
-      <button (click)="editTask(item.id,edit.value)">Modifier</button>
-      
-      <button (click)="removeTask(item.id)">Supprimer</button></li>
+    <li>
+        {{item.name}} 
+        <button (click)="completeTask(item.id,item.name)">Fait</button>
+        <input  type="text" placeholder="Editer Tache" #edit>
+        <button (click)="editTask(item.id,edit.value)">Modifier</button>
+        <button (click)="removeTask(item.id)">Supprimer</button>
+    </li>
   </ul>
 <br>
 <h2>Fait</h2>
     <ul *ngFor="let item of donelist">
-      <li>{{item.name}}</li>
+      <li>
+        {{item.name}}
+        <button (click)="uncompleteTask(item.id,item.name)">A faire</button>
+        <input  type="text" placeholder="Editer Tache" #editdone>
+        <button (click)="editTaskdone(item.id,editdone.value)">Modifier</button>
+        <button (click)="removeTaskdone(item.id)">Supprimer</button>
+
+
+      </li>
     </ul> 
 </main>
