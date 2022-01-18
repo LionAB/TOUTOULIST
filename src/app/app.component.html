@@ -1,15 +1,20 @@
 <main style="text-align: center;">
 <h1 style="text-align:center">TOUTOULIST</h1>
 
-<input type="text" placeholder="Enter New Task" #task>
+<input type="text" placeholder="Entrer Nouvelle Tache" #task>
 <br>
 <br>
-<button (click)="addTask(task.value); task.value=''">Add New Task</button>
+<button (click)="addTask(task.value); task.value=''">Ajouter Nouvelle Tache</button>
 <br>
 <br>
 <h2>A Faire</h2>
   <ul *ngFor="let item of list">
-    <li>{{item.name}} <button (click)="completeTask(item.id,item.name)">Done</button><button>Modify</button><button (click)="removeTask(item.id)">Remove</button></li>
+    <li>{{item.name}} 
+      <button (click)="completeTask(item.id,item.name)">Fait</button>
+      <input  type="text" placeholder="Editer Tache" #edit>
+      <button (click)="editTask(item.id,edit.value)">Modifier</button>
+      
+      <button (click)="removeTask(item.id)">Supprimer</button></li>
   </ul>
 <br>
 <h2>Fait</h2>

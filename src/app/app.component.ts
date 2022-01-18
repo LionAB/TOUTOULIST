@@ -14,7 +14,7 @@ export class AppComponent {
   {
     
     this.list.push({id:this.list.length,name:item,completed:false})
-    console.warn(this.list);
+    //console.warn(this.list);
   }
   removeTask(id:number)
   {
@@ -23,19 +23,20 @@ export class AppComponent {
   }
   completeTask(id:number,item:string)
   {
-    console.warn(this.list[id])
-    this.list[id]
-    console.warn(this.list[id].completed)
+    //console.warn(this.list[id])
+    //this.list[id]
+    //console.warn(this.list[id].completed)
     this.list[id].completed= true
-    console.warn(this.list[id].completed)
+    //console.warn(this.list[id].completed)
     if(this.list[id].completed == true){
       this.donelist.push({id:this.list.length,name:item,completed:true})
       this.list=this.list.filter(item=>item.id!==id)
-      console.warn(this.donelist)
+      //console.warn(this.donelist)
     
     }
   }
-  editTask(id:number){
-    this.list[id]
+  editTask(id:number,edit:string){
+    this.list[id].name=edit
+    //console.warn(this.list)
   }
 }
