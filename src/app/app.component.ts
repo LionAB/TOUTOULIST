@@ -37,7 +37,7 @@ export class AppComponent {
     this.list[id].completed= true
     //console.warn(this.list[id].completed)
     if(this.list[id].completed == true){
-      this.donelist.push({id:this.list.length,name:item,completed:true})
+      this.donelist.push({id:this.donelist.length,name:item,completed:true})
       this.list=this.list.filter(item=>item.id!==id)
      console.warn(this.donelist)
     
